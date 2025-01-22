@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#container{
+			width: 500px;
+			height: 500px;
+			background-color: navy;
+			border: 5px solid green;
+			border-radius: 10px;
+			padding: 10px;
+			color: yellow;
+			text-align: center;
+		}
+		button{
+			border: 3px solid red;
+			color: black;
+			cursor: pointer;
+		}
+		input{
+			border-radius: 30px;
+			border: 5px double yellowgreen;
+		}
+
+	</style>
+	<script type="text/javascript">
+
+	function Total()
+	{
+		a=document.getElementById("m1").value
+		b=document.getElementById("m2").value
+		c=document.getElementById("m3").value
+		d=document.getElementById("m4").value
+		e=document.getElementById("m5").value
+		Total=parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e)
+		document.getElementById("t1").innerHTML=Total
+	}
+	function Percentage()
+	{
+		a=document.getElementById("m1").value
+		b=document.getElementById("m2").value
+		c=document.getElementById("m3").value
+		d=document.getElementById("m4").value
+		e=document.getElementById("m5").value
+		pr=((parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e))/500)*100
+		document.getElementById("t2").innerHTML=pr+" % "
+	}
+	function Grade()
+	{
+		a=document.getElementById("m1").value
+		b=document.getElementById("m2").value
+		c=document.getElementById("m3").value
+		d=document.getElementById("m4").value
+		e=document.getElementById("m5").value
+		pr=((parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e))/500)*100
+		document.getElementById("t2").innerHTML=pr+" % "
+	    
+	if(pr>=90)
+		grade="O"
+	else if(pr>=80 && pr<90)
+		grade="E"
+	else if(pr>=70 && pr<80)
+		grade="A"
+	else if(pr>=60 && pr<70)
+		grade="B"
+	else if(pr>=50 && pr<60)
+		grade="C"
+	else if(pr>=40 && pr<50)
+		grade="D"
+	else
+	    grade="F"
+		
+
+		document.getElementById("t3").innerHTML=grade
+	}
+	
+
+	</script>
+
+</head>
+<body>
+<div id="container">
+	<h1>Results of Students</h1>
+	<hr color=red>
+	<input type="number" id="m1" placeholder="Enter marks in English"><br><br>
+	<input type="number" id="m2" placeholder="Enter marks in Math"><br><br>
+	<input type="number" id="m3" placeholder="Enter marks in Cemistry"><br><br>
+	<input type="number" id="m4" placeholder="Enter marks in Physics"><br><br>
+	<input type="number" id="m5" placeholder="Enter marks in Bio"><br><br>
+	<p id="t1"></p>
+	<p id="t2"></p>
+	<p id="t3"></p>
+	<button onclick="Total()">Total</button>
+	<button onclick="Percentage()">Percentage</button>
+	<button onclick="Grade()">Grade</button>
+
+
+</div>
+</body>
+</html>
